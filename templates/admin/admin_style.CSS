@@ -1,0 +1,11 @@
+/* Custom Admin Panel Styling */
+body {
+    background-color: #f4f4f4;  /* Light gray background */
+}
+#header {
+    background: #003366 !important; /* Dark blue header */
+}
+.module caption {
+    font-weight: bold;
+    color: #003366;
+}

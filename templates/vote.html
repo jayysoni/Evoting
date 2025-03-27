@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote Now - Nationalist E-Voting</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .hero {
+            background: linear-gradient(to right, #ff9933, #ffffff, #138808);
+            color: #000;
+            padding: 40px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .candidates-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .candidate {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            width: 280px;
+            text-align: center;
+            border-top: 6px solid #ff9933;
+        }
+
+        .selection-container {
+            margin-top: 20px;
+            display: inline-block;
+            text-align: left;
+        }
+
+        .vote-btn {
+            background: linear-gradient(45deg, #ff5733, #ff9933);
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            margin-top: 20px;
+        }
+
+        .vote-btn:hover {
+            transform: scale(1.1);
+            background: linear-gradient(45deg, #ff4500, #ff8800);
+        }
+
+        footer {
+            background: #ff9933;
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <h1>Nationalist E-Voting System</h1>
+        <p>Choose your leader wisely</p>
+    </header>
+
+    <!-- ✅ Form Now Submits to Django View -->
+    {% comment %} <form method="post" action="{% url 'vote' %}">
+        {% csrf_token %}
+
+        <section class="candidates-container">
+            <!-- Candidate 1 -->
+            <div class="candidate">
+                <h3>Jay Soni</h3>
+                <p>Party: People's Voice</p>
+                <p>Motto: "Equality and Justice for All"</p>
+            </div>
+
+            <!-- Candidate 2 -->
+            <div class="candidate">
+                <h3>Gunjan Pandagre</h3>
+                <p>Party: National Unity</p>
+                <p>Motto: "Strength and Progress"</p>
+            </div>
+
+            <!-- Candidate 3 -->
+            <div class="candidate">
+                <h3>Udit Patankar</h3>
+                <p>Party: Future Front</p>
+                <p>Motto: "Innovation for a Better Tomorrow"</p>
+            </div>
+        </section>
+
+        <!-- ✅ Selection Area Below Candidates -->
+        <div class="selection-container">
+            <label>
+                <input type="radio" name="candidate_id" value="1" required> Vote for Jay Soni
+            </label><br>
+            <label>
+                <input type="radio" name="candidate_id" value="2"> Vote for Gunjan Pandagre
+            </label><br>
+            <label>
+                <input type="radio" name="candidate_id" value="3"> Vote for Udit Patankar
+            </label><br>
+        </div>
+
+        <button type="submit" class="vote-btn">Submit Your Vote</button>
+    </form> {% endcomment %}
+    <form method="POST" action="{% url 'vote' %}">
+        {% csrf_token %}
+    
+        <section class="candidates-container">
+            <div class="candidate">
+                <h3>Jay Soni</h3>
+                <p>Party: People's Voice</p>
+                <p>Motto: "Equality and Justice for All"</p>
+                <label><input type="radio" name="candidate_id" value="2" required> Vote for Jay Soni</label>
+            </div>
+    
+            <div class="candidate">
+                <h3>Gunjan Pandagre</h3>
+                <p>Party: National Unity</p>
+                <p>Motto: "Strength and Progress"</p>
+                <label><input type="radio" name="candidate_id" value="3"> Vote for Gunjan Pandagre</label>
+            </div>
+    
+            <div class="candidate">
+                <h3>Udit Patankar</h3>
+                <p>Party: Future Front</p>
+                <p>Motto: "Innovation for a Better Tomorrow"</p>
+                <label><input type="radio" name="candidate_id" value="4"> Vote for Udit Patankar</label>
+            </div>
+        </section>
+    
+        <button type="submit" class="vote-btn">Submit Your Vote</button>
+    </form>
+    <footer>
+        <p>&copy; 2025 E-Voting System as Minor Project. Your Vote, Your Nation.</p>
+    </footer>
+</body>
+</html>

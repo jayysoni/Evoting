@@ -1,0 +1,171 @@
+{% comment %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login - Nationalist E-Voting</title>
+</head>
+<body>
+    <h2>Voter Login</h2>
+    
+    {% if messages %}
+        {% for message in messages %}
+            <p style="color: red;">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+    
+    <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Enter Your Voter ID" required>
+        <input type="password" name="password" placeholder="Enter Your Password" required>
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html> {% endcomment %}
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Nationalist E-Voting</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to right, #ff9933, #ffffff, #138808);
+            color: #000;
+            padding: 30px;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Login Section */
+        .login-container {
+            background: white;
+            padding: 30px;
+            width: 320px;
+            margin: 60px auto;
+            border-radius: 10px;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .login-container h2 {
+            margin-bottom: 15px;
+            font-size: 22px;
+            color: #d32f2f;
+            text-transform: uppercase;
+        }
+
+        .login-container input {
+            width: 85%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .login-container input:focus {
+            border: 1px solid #138808;
+            outline: none;
+            box-shadow: 0px 0px 5px #138808;
+        }
+
+        /* Login Button */
+        .login-btn {
+            background: #d32f2f;
+            color: white;
+            padding: 12px;
+            width: 90%;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        .login-btn:hover {
+            background: #b71c1c;
+            transform: scale(1.05);
+        }
+
+        /* Error Message */
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 15px;
+            animation: shake 0.3s ease-in-out;
+        }
+
+        /* Footer */
+        footer {
+            background: #ff9933;
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <h1>Nationalist E-Voting System</h1>
+        <p>Secure Login for Voters</p>
+    </header>
+
+    <section class="login-container">
+        <h2>Login</h2>
+
+        <!-- Error Messages -->
+        {% if messages %}
+            {% for message in messages %}
+                <p class="error-message">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+        
+        <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Enter Your Voter ID" required>
+            <input type="password" name="password" placeholder="Enter Your Password" required>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Nationalist E-Voting System. Secure and Fair Elections.</p>
+    </footer>
+</body>
+</html>
