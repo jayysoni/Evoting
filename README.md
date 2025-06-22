@@ -24,7 +24,7 @@ This web-based E-Voting system allows registered users (students) to log in usin
 - **HTML / CSS**
 - **Django Authentication System**
 
-## 📂 Project Structure (Simplified)
+## Project Structure (Simplified)
 
 ---
 
