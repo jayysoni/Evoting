@@ -1,6 +1,6 @@
-# E-Voting System using Django
+## E-Voting System using Django Abstract
 
-A secure online voting system built with Django, SQLite, and Django’s built-in authentication system. This project simulates a real-world election environment with 3 candidates and 100 enrolled voters.
+This project presents a secure, web-based E-Voting System built using Django and SQLite. Aimed at educational institutions, the platform allows approximately 100 pre-registered voters to log in using their unique enrollment numbers and cast a single vote. The admin interface simplifies candidate management and result tracking, while Django’s built-in authentication and CSRF protection ensure secure and reliable operation. The system is ideal for simulating small-scale elections and serves as a practical demonstration of digital voting mechanisms.
 
 # Problem Statement
 
@@ -161,3 +161,13 @@ python3 manage.py
 ## Conclusion
 
 This E-Voting System demonstrates how technology can simplify and secure the voting process in small institutions. By leveraging Django’s capabilities, we built a system that ensures vote integrity, easy administration, and a better user experience. Though basic, it serves as a solid foundation for future, more complex systems such as blockchain-based voting or government-level applications.
+
+## License
+This project was developed as a personal academic project for educational purposes only.<br>
+
+You are free to explore, use, and modify the code for learning or academic submissions. However, the system is **not intended for production <br>
+or commercial use** and comes with **no warranty** or security guarantees.<br>
+
+All features, logic, and implementation are created to simulate a small-scale e-voting system in an academic context.<br>
+
+© 2025 Jay Soni. All rights reserved.
