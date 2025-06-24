@@ -38,15 +38,15 @@ This web-based E-Voting system allows registered users (students) to log in usin
 ## Project Structure (Simplified)
 ```
 e-voting-system/
-├── .vscode/              # VS Code settings (optional)
-├── evoting/              # Main Django app (models, views, urls, admin)
-├── home/                 # Likely a secondary app (homepage, login logic)
-├── static/               # Static files (CSS, JS)
-├── templates/            # HTML templates (login.html, vote.html, result.html, etc.)
-├── db.sqlite3            # SQLite database file
-├── manage.py             # Django management script
-├── README.md             # Project documentation
-├── .DS_Store             # (Mac system file, can be ignored or added to .gitignore)
+├── .vscode/              
+├── evoting/              
+├── home/                 
+├── static/               
+├── templates/            
+├── db.sqlite3            
+├── manage.py             
+├── README.md             
+├── .DS_Store             
 ```
 
 ## How to Run Locally
